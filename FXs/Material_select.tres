@@ -1,8 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b0fyre8pp83xe"]
-
-[ext_resource type="Shader" uid="uid://b2y6ck4tgnxia" path="res://Shaders/outline.tres" id="1_3gfpk"]
-
-[resource]
-shader = ExtResource("1_3gfpk")
-shader_parameter/Outline_Color = Color(0.815686, 0, 0, 0.513726)
-shader_parameter/Width = 5.0

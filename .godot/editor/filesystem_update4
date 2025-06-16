@@ -1,0 +1,3 @@
+res://Scripts/Character/character_script.gd
+res://Scenes/Character/character.tscn
+res://Scripts/Character/player_control_script.gd

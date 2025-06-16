@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://3xjmk226wqw6"]
+
+[ext_resource type="Script" uid="uid://bkgb7oct4yelf" path="res://Scripts/Character/character_script.gd" id="1_isa4f"]
+[ext_resource type="Texture2D" uid="uid://btv4unm2ci3sl" path="res://icon.svg" id="2_syf7y"]
+[ext_resource type="Script" uid="uid://cswkb3mrovclj" path="res://Scripts/Character/player_control_script.gd" id="3_syf7y"]
+
+[node name="Character" type="CharacterBody2D"]
+script = ExtResource("1_isa4f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_syf7y")
+
+[node name="Player_control" type="Node" parent="."]
+script = ExtResource("3_syf7y")
