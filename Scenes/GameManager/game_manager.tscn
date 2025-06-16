@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt6x6gbnoi1mu"]
+
+[ext_resource type="Script" uid="uid://unu84pkc40il" path="res://Scripts/Game_Manager/game_manager_script.gd" id="1_k7y78"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_k7y78")
+
+[node name="QuestBox" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Background" type="ColorRect" parent="QuestBox"]
+offset_left = 739.0
+offset_top = 212.0
+offset_right = 740.0
+offset_bottom = 213.0
+scale = Vector2(312, 234)
+color = Color(0.2, 0.294118, 1, 0.615686)
+
+[node name="QuestTitle" type="RichTextLabel" parent="QuestBox"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 188.0
+offset_top = -136.0
+offset_right = 469.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Quest title"
+
+[node name="QuestDescription" type="RichTextLabel" parent="QuestBox"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 190.0
+offset_top = -86.0
+offset_right = 458.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quest description"
+
+[node name="InfoCanvas" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Gold" type="Label" parent="InfoCanvas"]
+offset_left = 107.0
+offset_top = 48.0
+offset_right = 147.0
+offset_bottom = 71.0
+text = "(Gold)"
+
+[node name="Xp" type="Label" parent="InfoCanvas"]
+offset_left = 106.0
+offset_top = 19.0
+offset_right = 191.0
+offset_bottom = 42.0
+text = "(Experience)"
+
+[node name="GoldLabel" type="Label" parent="InfoCanvas"]
+offset_left = 35.0
+offset_top = 47.0
+offset_right = 93.0
+offset_bottom = 70.0
+text = "Valores"
+
+[node name="XpLabel" type="Label" parent="InfoCanvas"]
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 74.0
+offset_bottom = 42.0
+text = "Exp"

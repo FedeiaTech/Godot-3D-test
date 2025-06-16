@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccsftij8njioh"]
+
+[ext_resource type="Script" uid="uid://bat53gghvukpy" path="res://Scripts/Player/state_machine.gd" id="1_vissh"]
+
+[node name="StateMachine" type="Node" node_paths=PackedStringArray("default_state")]
+script = ExtResource("1_vissh")
+default_state = NodePath("")

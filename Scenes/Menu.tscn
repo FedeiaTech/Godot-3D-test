@@ -1,0 +1,189 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5kvfumn4m3d"]
+
+[ext_resource type="Script" uid="uid://bnxohi54n2ycx" path="res://Scripts/menu_script.gd" id="1_rqtiy"]
+[ext_resource type="Texture2D" uid="uid://cv2nd6swyvxbx" path="res://Assets/Menu/astronaut_wall.jpg" id="2_2b3gm"]
+[ext_resource type="FontFile" uid="uid://df00xl5k5yjad" path="res://Assets/Fonts/SpaceQuest-yOY3.ttf" id="3_fqc6f"]
+[ext_resource type="FontFile" uid="uid://cbug21hxc0733" path="res://Assets/Fonts/Roboto-Regular.ttf" id="4_fkdbv"]
+
+[sub_resource type="Animation" id="Animation_lu0tb"]
+resource_name = "Fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_tmj56"]
+resource_name = "Fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_geewt"]
+_data = {
+&"Fade_in": SubResource("Animation_lu0tb"),
+&"Fade_out": SubResource("Animation_tmj56")
+}
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rqtiy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -87.0
+offset_right = 1254.0
+offset_bottom = 752.0
+texture = ExtResource("2_2b3gm")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 565.0
+offset_top = 199.0
+offset_right = 901.0
+offset_bottom = 566.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Title" type="VBoxContainer" parent="MarginContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title_1" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer/Title"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fqc6f")
+theme_override_font_sizes/font_size = 32
+text = "Navegante"
+horizontal_alignment = 1
+
+[node name="Title_2" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer/Title"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fqc6f")
+theme_override_font_sizes/font_size = 30
+text = "Gravedad Cero"
+horizontal_alignment = 1
+
+[node name="space2" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer/Title"]
+layout_mode = 2
+text = "      "
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Start_b" type="Button" parent="MarginContainer/VBoxContainer3/VBoxContainer/Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fkdbv")
+theme_override_font_sizes/font_size = 25
+text = "Empezar"
+flat = true
+
+[node name="space" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer/Buttons"]
+layout_mode = 2
+text = "      "
+horizontal_alignment = 1
+
+[node name="Quit_b" type="Button" parent="MarginContainer/VBoxContainer3/VBoxContainer/Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fkdbv")
+theme_override_font_sizes/font_size = 25
+text = "Salir"
+flat = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="space" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "
+ 
+ 
+ 
+ 
+ 
+"
+
+[node name="Copyright2" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fkdbv")
+theme_override_font_sizes/font_size = 20
+text = "Por Fede Iacono"
+horizontal_alignment = 2
+
+[node name="version" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fkdbv")
+theme_override_font_sizes/font_size = 20
+text = "Ver. 0.1"
+horizontal_alignment = 2
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_geewt")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -15.0
+offset_right = 13.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer3/VBoxContainer/Buttons/Start_b" to="." method="_on_start_b_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer3/VBoxContainer/Buttons/Quit_b" to="." method="_on_quit_b_pressed"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]

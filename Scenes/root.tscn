@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1me7qixm4xd8"]
+
+[ext_resource type="Script" uid="uid://b5ump6yr3h3rl" path="res://Scripts/Global/global.gd" id="1_5468c"]
+[ext_resource type="Script" uid="uid://b7857anyjxswx" path="res://Scripts/Global/global_item_list.gd" id="2_tvawy"]
+[ext_resource type="Script" uid="uid://bs6yy573536vk" path="res://Scripts/scene_manager.gd" id="3_vwkqy"]
+[ext_resource type="PackedScene" uid="uid://cd8werocsvv3k" path="res://Scenes/LevelManager/Universe.tscn" id="4_iue1m"]
+
+[sub_resource type="World3D" id="World3D_8n2i8"]
+
+[node name="root" type="Window"]
+process_mode = 1
+auto_translate_mode = 1
+world_3d = SubResource("World3D_8n2i8")
+canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+physics_object_picking = true
+gui_embed_subwindows = true
+positional_shadow_atlas_size = 4096
+title = "astronaut 0.2"
+position = Vector2i(113, 0)
+size = Vector2i(1140, 750)
+unresizable = true
+borderless = true
+min_size = Vector2i(64, 64)
+content_scale_size = Vector2i(1140, 750)
+content_scale_mode = 2
+content_scale_aspect = 1
+
+[node name="Global" type="Node" parent="."]
+script = ExtResource("1_5468c")
+
+[node name="GlobalItemList" type="Node" parent="."]
+script = ExtResource("2_tvawy")
+
+[node name="scene_manager" type="CanvasLayer" parent="."]
+script = ExtResource("3_vwkqy")
+
+[node name="Universe" parent="." instance=ExtResource("4_iue1m")]

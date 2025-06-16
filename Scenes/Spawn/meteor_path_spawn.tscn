@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ndk7cittk4n8"]
+
+[sub_resource type="Curve2D" id="Curve2D_eexmu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 859, 24, 0, 0, 0, 0, 1162, 22, 0, 0, 0, 0, 1165, 561, 0, 0, 0, 0, 1217, 498, 0, 0, 0, 0, 1177, 400, 0, 0, 0, 0, 1198, 268, 0, 0, 0, 0, 1180, 138, 0, 0, 0, 0, 1190, -16, 0, 0, 0, 0, 640, 11, 0, 0, 0, 0, 859, 24)
+}
+point_count = 10
+
+[node name="PathSpawn" type="Path2D"]
+curve = SubResource("Curve2D_eexmu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(1162.2, 57.9629)
+rotation = 1.56523
+progress = 338.98
+
+[node name="Spawn_timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true

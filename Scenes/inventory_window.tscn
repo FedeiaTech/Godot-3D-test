@@ -1,0 +1,98 @@
+[gd_scene load_steps=2 format=3 uid="uid://dspg2eu4qspts"]
+
+[ext_resource type="Script" uid="uid://cba0fkbaerqgy" path="res://Scripts/inventory/belt/inventory_belt_script.gd" id="1_b0se3"]
+
+[node name="Inventory" type="CanvasLayer"]
+script = ExtResource("1_b0se3")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.806
+anchor_top = 0.676
+anchor_right = 0.806
+anchor_bottom = 0.676
+offset_left = -0.512085
+offset_top = 0.351959
+offset_right = 39.4879
+offset_bottom = 40.352
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot_1" type="Button" parent="Control"]
+layout_mode = 2
+offset_right = 8.0
+offset_bottom = 40.0
+
+[node name="Slot_1_img" type="TextureRect" parent="Control/Slot_1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/Slot_1"]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 40.0
+offset_bottom = 68.0
+text = "1"
+horizontal_alignment = 1
+
+[node name="Slot_2" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 12.0
+offset_right = 20.0
+offset_bottom = 40.0
+
+[node name="Slot_2_img" type="TextureRect" parent="Control/Slot_2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/Slot_2"]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 40.0
+offset_bottom = 68.0
+text = "2"
+horizontal_alignment = 1
+
+[node name="Slot_3" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 24.0
+offset_right = 32.0
+offset_bottom = 40.0
+
+[node name="Slot_3_img" type="TextureRect" parent="Control/Slot_3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/Slot_3"]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 40.0
+offset_bottom = 68.0
+text = "3"
+horizontal_alignment = 1
+
+[node name="Slot_4" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 36.0
+offset_right = 44.0
+offset_bottom = 40.0
+
+[node name="Slot_4_img" type="TextureRect" parent="Control/Slot_4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/Slot_4"]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 40.0
+offset_bottom = 68.0
+text = "4"
+horizontal_alignment = 1

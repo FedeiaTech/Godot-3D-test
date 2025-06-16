@@ -1,0 +1,224 @@
+[gd_scene load_steps=10 format=3 uid="uid://ilp6munenn3g"]
+
+[ext_resource type="Script" uid="uid://c45u1tb64cbuh" path="res://Scripts/gui_scene.gd" id="1_2cyul"]
+[ext_resource type="Texture2D" uid="uid://dc870sih5svel" path="res://Assets/Img/Decorations/Universe/control_panel_alert.png" id="2_pk0gb"]
+[ext_resource type="Texture2D" uid="uid://cscmwuxu3im4l" path="res://Assets/Img/Decorations/Universe/control_panel_no_alert.png" id="3_r0nus"]
+[ext_resource type="Texture2D" uid="uid://bbxhysbr7gras" path="res://Assets/Buttons/restart2_s.png" id="4_y32rs"]
+[ext_resource type="Texture2D" uid="uid://dqqnva7rsf6ee" path="res://Assets/Buttons/full-screen1_st.png" id="5_2r5xx"]
+[ext_resource type="Texture2D" uid="uid://ceq71oepnbkrc" path="res://Assets/Buttons/exit_st.png" id="6_wm4na"]
+[ext_resource type="PackedScene" uid="uid://6wmbl72h83ve" path="res://Scenes/Inventory/Belt/inventory_belt.tscn" id="7_yedv0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7h4n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pk0gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r0nus")
+}],
+"loop": true,
+"name": &"alert_panel",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_r0nus")
+}],
+"loop": false,
+"name": &"default_panel",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nwo36"]
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_2cyul")
+
+[node name="ControlPanel_animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(592.878, 687.646)
+scale = Vector2(0.40051, 0.314054)
+sprite_frames = SubResource("SpriteFrames_f7h4n")
+animation = &"default_panel"
+autoplay = "default_panel"
+frame_progress = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="ControlPanel_animation"]
+self_modulate = Color(0, 0, 0, 0.564706)
+offset_left = -492.0
+offset_top = -37.0
+offset_right = -312.0
+offset_bottom = 119.0
+
+[node name="ColorRect2" type="ColorRect" parent="ControlPanel_animation"]
+self_modulate = Color(0, 0, 0, 0.501961)
+offset_left = 58.0
+offset_top = -47.0
+offset_right = 340.0
+offset_bottom = 138.0
+
+[node name="User_MarginContainer" type="MarginContainer" parent="."]
+offset_left = 52.0
+offset_top = 643.0
+offset_right = 178.0
+offset_bottom = 730.0
+
+[node name="Main_Container" type="HBoxContainer" parent="User_MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="User_MarginContainer/Main_Container"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="b_save" type="Button" parent="User_MarginContainer/Main_Container/VBoxContainer"]
+layout_mode = 2
+text = "Guardar"
+flat = true
+
+[node name="b_load" type="Button" parent="User_MarginContainer/Main_Container/VBoxContainer"]
+layout_mode = 2
+text = "Cargar"
+flat = true
+
+[node name="life_label" type="Label" parent="."]
+offset_left = 393.0
+offset_top = 669.0
+offset_right = 470.0
+offset_bottom = 710.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.62336, 3.86249e-06, 1.92523e-07, 1)
+theme_override_constants/line_spacing = -5
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 4
+text = "Game
+Over"
+horizontal_alignment = 1
+
+[node name="oxi_label" type="Label" parent="."]
+offset_left = 616.0
+offset_top = 670.0
+offset_right = 730.0
+offset_bottom = 693.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.141183, 0.371413, 0.999998, 1)
+theme_override_constants/line_spacing = -3
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 4
+text = "Oxygen
+Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+offset_left = 383.0
+offset_top = 643.0
+offset_right = 771.0
+offset_bottom = 730.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="b_restart" type="Button" parent="."]
+offset_left = 1027.0
+offset_top = 683.0
+offset_right = 1067.0
+offset_bottom = 723.0
+icon = ExtResource("4_y32rs")
+flat = true
+
+[node name="b_fullscreen" type="Button" parent="."]
+offset_left = 1073.0
+offset_top = 634.0
+offset_right = 1117.0
+offset_bottom = 678.0
+toggle_mode = true
+icon = ExtResource("5_2r5xx")
+flat = true
+
+[node name="b_exit" type="Button" parent="."]
+offset_left = 1072.0
+offset_top = 682.0
+offset_right = 1121.0
+offset_bottom = 726.0
+icon = ExtResource("6_wm4na")
+flat = true
+
+[node name="b_inventory" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 189.0
+offset_top = -69.0
+offset_right = 214.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nwo36")
+flat = true
+
+[node name="Interact_UI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Interact_UI"]
+offset_left = 860.0
+offset_top = 478.0
+offset_right = 940.0
+offset_bottom = 518.0
+color = Color(0.11, 0.11, 0.11, 0.65098)
+metadata/_edit_use_anchors_ = true
+
+[node name="InteractLabel" type="Label" parent="Interact_UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 290.0
+offset_top = 103.0
+offset_right = 370.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "Agarrar (E)"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InfoText" type="RichTextLabel" parent="."]
+offset_left = 30.0
+offset_top = 274.0
+offset_right = 250.0
+offset_bottom = 600.0
+text = "info
+"
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Inventory_belt" parent="." instance=ExtResource("7_yedv0")]
+anchors_preset = -1
+anchor_left = 0.517
+anchor_right = 0.517
+offset_left = -0.380005
+offset_right = -0.380005
+
+[connection signal="pressed" from="User_MarginContainer/Main_Container/VBoxContainer/b_save" to="." method="_on_b_save_pressed"]
+[connection signal="pressed" from="User_MarginContainer/Main_Container/VBoxContainer/b_load" to="." method="_on_b_load_pressed"]
+[connection signal="pressed" from="b_restart" to="." method="_on_b_restart_pressed"]
+[connection signal="toggled" from="b_fullscreen" to="." method="_on_b_fullscreen_toggled"]
+[connection signal="pressed" from="b_exit" to="." method="_on_b_exit_pressed"]
+[connection signal="mouse_entered" from="b_inventory" to="." method="_on_b_inventory_mouse_entered"]
+[connection signal="mouse_exited" from="b_inventory" to="." method="_on_b_inventory_mouse_exited"]
+[connection signal="pressed" from="b_inventory" to="." method="_on_b_inventory_pressed"]

@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4iqjdybw8148"]
+
+[ext_resource type="Script" uid="uid://bqwa2u5440upw" path="res://Scripts/menu_popup_script.gd" id="1_diyei"]
+[ext_resource type="FontFile" uid="uid://cbug21hxc0733" path="res://Assets/Fonts/Roboto-Regular.ttf" id="1_jknxu"]
+
+[sub_resource type="Theme" id="Theme_vg2xa"]
+Button/colors/font_color = Color(0.861726, 0.923289, 0.407655, 1)
+
+[node name="Menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_diyei")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -200.0
+offset_right = 350.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.698039)
+
+[node name="Modal" type="PanelContainer" parent="."]
+self_modulate = Color(1, 0, 1, 0)
+custom_minimum_size = Vector2(128, 64)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -198.0
+offset_right = 350.0
+offset_bottom = 202.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Magin_Container" type="MarginContainer" parent="Modal"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Modal/Magin_Container"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Header_label" type="Label" parent="Modal/Magin_Container/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jknxu")
+theme_override_font_sizes/font_size = 23
+text = "Estás seguro?"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Message_label2" type="Label" parent="Modal/Magin_Container/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jknxu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Modal/Magin_Container/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 54
+alignment = 1
+
+[node name="Confirm_Button" type="Button" parent="Modal/Magin_Container/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = SubResource("Theme_vg2xa")
+theme_override_fonts/font = ExtResource("1_jknxu")
+text = "Confirmar"
+flat = true
+
+[node name="Cancel_Button" type="Button" parent="Modal/Magin_Container/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_jknxu")
+text = "Cancelar"
+flat = true
+
+[connection signal="pressed" from="Modal/Magin_Container/VBoxContainer/HBoxContainer/Confirm_Button" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="Modal/Magin_Container/VBoxContainer/HBoxContainer/Cancel_Button" to="." method="_on_cancel_button_pressed"]

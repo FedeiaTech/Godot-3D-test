@@ -1,0 +1,241 @@
+[gd_scene load_steps=12 format=3 uid="uid://hjv05u33y1tm"]
+
+[ext_resource type="Script" uid="uid://1nosynmwh336" path="res://Scripts/inventory/inventory_slot_script.gd" id="1_drj5r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cprmy"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pkn53"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5jlk3"]
+texture = SubResource("CanvasTexture_pkn53")
+modulate_color = Color(1, 1, 1, 0.2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d6jlk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dv85w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xq21x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w6xwq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_aj3kg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_knuuu"]
+texture = SubResource("CanvasTexture_aj3kg")
+modulate_color = Color(0.46, 0.541, 1, 0.356863)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbwnj"]
+bg_color = Color(0.92, 0.92, 0.92, 0.219608)
+
+[node name="Inventory_Slot" type="Control" groups=["item"]]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -1070.0
+offset_bottom = -680.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_drj5r")
+
+[node name="OuterBorder" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.293333, 1, 0.141176)
+
+[node name="InnerBorder" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0165, 0.0187333, 0.05, 0.329412)
+
+[node name="ItemIcon" type="Sprite2D" parent="InnerBorder"]
+position = Vector2(20, 20)
+scale = Vector2(0.5, 0.5)
+
+[node name="ItemQuantity" type="Label" parent="InnerBorder"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 11
+
+[node name="ItemButton" type="Button" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cprmy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5jlk3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_d6jlk")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dv85w")
+
+[node name="DetailsPanel" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(240, 130)
+layout_mode = 0
+offset_left = 5.0
+offset_top = -135.0
+offset_right = 245.0
+offset_bottom = -5.0
+color = Color(0.2, 0.294118, 1, 0.615686)
+
+[node name="ItemName" type="Label" parent="DetailsPanel"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 45.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.0745098, 0.0745098, 0.0745098, 1)
+theme_override_font_sizes/font_size = 40
+text = "Name"
+
+[node name="ItemType" type="Label" parent="DetailsPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -11.5
+offset_right = 45.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.0745098, 0.0745098, 0.0745098, 0.764706)
+theme_override_font_sizes/font_size = 21
+text = "Type"
+
+[node name="ItemEffect" type="Label" parent="DetailsPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -23.0
+offset_right = 6.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.97, 0.97, 0.97, 0.6)
+theme_override_constants/line_spacing = -4
+theme_override_font_sizes/font_size = 20
+text = "Effect
++ Another effect"
+
+[node name="UsagePanel" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(240, 130)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -135.0
+offset_right = 185.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.293333, 1, 0.615686)
+
+[node name="UseButton" type="Button" parent="UsagePanel"]
+custom_minimum_size = Vector2(30, 43)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -52.0
+offset_top = 10.0
+offset_right = -5.0
+offset_bottom = 53.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xq21x")
+text = "Usar"
+
+[node name="DropButton" type="Button" parent="UsagePanel"]
+custom_minimum_size = Vector2(30, 43)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = -53.0
+offset_right = -5.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w6xwq")
+text = "Tirar"
+
+[node name="ItemDescription" type="TextEdit" parent="UsagePanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 182.0
+offset_bottom = 120.0
+mouse_default_cursor_shape = 0
+theme_override_colors/font_color = Color(0.968627, 0.968627, 0.968627, 0.6)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxTexture_knuuu")
+text = "Example
+of
+text
+description
+item"
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+wrap_mode = 1
+indent_wrapped_lines = true
+scroll_smooth = true
+scroll_fit_content_height = true
+
+[node name="HotbarButton" type="Button" parent="UsagePanel"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 13.0
+offset_right = 179.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_bbwnj")
+text = "*"
+
+[connection signal="gui_input" from="ItemButton" to="." method="_on_item_button_gui_input"]
+[connection signal="mouse_entered" from="ItemButton" to="." method="_on_item_button_mouse_entered"]
+[connection signal="mouse_exited" from="ItemButton" to="." method="_on_item_button_mouse_exited"]
+[connection signal="pressed" from="UsagePanel/UseButton" to="." method="_on_use_button_pressed"]
+[connection signal="pressed" from="UsagePanel/DropButton" to="." method="_on_drop_button_pressed"]
+[connection signal="pressed" from="UsagePanel/HotbarButton" to="." method="_on_hotbar_button_pressed"]

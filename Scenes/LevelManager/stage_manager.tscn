@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceofhufysyjo6"]
+
+[ext_resource type="Script" uid="uid://bs6yy573536vk" path="res://Scripts/scene_manager.gd" id="1_5njtf"]
+
+[node name="StageManager" type="CanvasLayer"]
+script = ExtResource("1_5njtf")
+
+[connection signal="ref_location" from="." to="." method="_on_ref_location"]
